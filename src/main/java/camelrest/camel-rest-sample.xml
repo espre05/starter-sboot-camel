@@ -1,0 +1,19 @@
+<rests xmlns="http://camel.apache.org/schema/spring">
+   <rest>
+      <post uri="/persons">
+         <to uri="direct:postPersons"/>
+      </post>
+      <get uri="/persons">
+         <to uri="direct:getPersons"/>
+      </get>
+      <get uri="/persons/{personId}">
+          <to uri="direct:getPersionId"/>
+      </get>
+      <put uri="/persons/{personId}">
+          <to uri="direct:putPersionId"/>
+      </put>
+      <delete uri="/persons/{personId}">
+          <to uri="direct:deletePersionId"/>
+      </delete>
+   </rest>
+ </rests>
