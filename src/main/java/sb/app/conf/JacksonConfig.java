@@ -17,7 +17,7 @@ public class JacksonConfig {
 
     @PostConstruct
     public void setup() {
-        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // To format json
         //whatever else you need
     }
 

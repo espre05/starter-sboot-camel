@@ -27,7 +27,7 @@ import org.apache.camel.component.jpa.Consumed;
 
 @Entity
 @Table(name = "orders")
-@NamedQuery(name = "new-orders", query = "select order from Order order where order.processed = false")
+@NamedQuery(name = "query_new_orders", query = "select order from Order order where order.processed = false")
 public class Order {
 
     @Id

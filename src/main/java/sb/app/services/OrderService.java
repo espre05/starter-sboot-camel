@@ -14,13 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sb.app;
+package sb.app.services;
 
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import sb.app.bo.Book;
 import sb.app.bo.Order;
 import sb.app.repo.BookRepository;
 
@@ -33,9 +34,10 @@ public class OrderService {
     private final Random amount = new Random();
 
     public Order generateOrder() {
+        Book book = books.findOne(amount.nextInt(2) + 1);//create a reandom book
         Order order = new Order();
         order.setAmount(amount.nextInt(10) + 1);
-        order.setBook(books.findOne(amount.nextInt(2) + 1));
+        order.setBook(book);
         return order;
     }
 }

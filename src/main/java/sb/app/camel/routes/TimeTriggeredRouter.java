@@ -10,13 +10,14 @@ public class TimeTriggeredRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:hello?period={{timer.period}}").routeId("timePingStream")
-                .transform().simple("Ping at ${date:now:yyyy-MM-dd HH:mm:ss}")
-                .transform().method(StringTransformer.class, "toUpper")
-                .filter(simple("${body} contains 'foo'"))
-                    .to("log:foo")
-                .end()
-                .to("stream:out");
+        from("timer:hello?period={{timer.period}}")//for reach 3 secs?
+            .routeId("timePingStream")
+            .transform().simple("Ping at ${date:now:yyyy-MM-dd HH:mm:ss}") //produce this TS string
+            .transform().method(StringTransformer.class, "toUpper") //transform to UPPER ase with a bean
+            .filter(simple("${body} contains 'foo'"))
+                .to("log:foo")// ig it has foo in bod
+            .end()
+            .to("stream:out"); //send to system out
     }
 
 }
