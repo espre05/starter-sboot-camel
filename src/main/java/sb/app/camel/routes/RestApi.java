@@ -2,6 +2,8 @@ package sb.app.camel.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
+
+import sb.app.repo.BookRepository;
 import sb.app.repo.Db;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +23,7 @@ public class RestApi extends RouteBuilder {
 		rest("/books").description("Books REST service")//
 				.get("/").description("The list of all the books")//
 				.route().routeId("books-api")//
-				.bean(Db.class, "findBooks")//
+				.bean(BookRepository.class, "findAll")//check if it works -- if not revert to Db.class
 				.endRest().get("order/{id}").description("Details of an order by id")//
 				.route().routeId("order-api")//
 				.bean(Db.class, "findOrder(${header.id})");

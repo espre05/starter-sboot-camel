@@ -24,6 +24,7 @@ import org.springframework.stereotype.Component;
 import sb.app.bo.Book;
 import sb.app.bo.Order;
 import sb.app.repo.BookRepository;
+import sb.app.repo.OrderRepository;
 
 @Component
 public class OrderService {
@@ -31,13 +32,21 @@ public class OrderService {
     @Autowired
     private BookRepository books;
 
+    @Autowired
+    private OrderRepository orderRepo;
+
     private final Random amount = new Random();
 
-    public Order generateOrder() {
-        Book book = books.findOne(amount.nextInt(2) + 1);//create a reandom book
+    public Order constructOrder() {
+        Book book = books.findOne(amount.nextInt(2) + 1);// create a reandom book
         Order order = new Order();
         order.setAmount(amount.nextInt(10) + 1);
         order.setBook(book);
         return order;
+    }
+
+    public void save(Order order) {
+        orderRepo.save(order);
+
     }
 }

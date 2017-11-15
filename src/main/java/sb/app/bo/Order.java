@@ -25,6 +25,8 @@ import javax.persistence.Table;
 
 import org.apache.camel.component.jpa.Consumed;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "orders")
 @NamedQuery(name = "query_new_orders", query = "select order from Order order where order.processed = false")
@@ -32,6 +34,7 @@ public class Order {
 
     @Id
     @GeneratedValue
+    @NotNull
     private int id;
 
     private int amount;
@@ -41,7 +44,7 @@ public class Order {
 
     private boolean processed;
 
-    @Consumed
+    //@Consumed
     public void setProcessed() {
         processed = true;
     }
