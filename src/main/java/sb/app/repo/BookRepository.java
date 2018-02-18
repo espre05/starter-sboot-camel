@@ -19,7 +19,7 @@ package sb.app.repo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import sb.app.bo.Book;
+import sb.app.domain.Book;
 
 @RepositoryRestResource
 public interface BookRepository extends CrudRepository<Book, Integer> {

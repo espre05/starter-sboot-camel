@@ -21,8 +21,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import sb.app.bo.Book;
-import sb.app.bo.Order;
+import sb.app.domain.Book;
+import sb.app.domain.Order;
 import sb.app.repo.BookRepository;
 import sb.app.repo.OrderRepository;
 

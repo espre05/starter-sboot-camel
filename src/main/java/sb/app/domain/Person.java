@@ -1,4 +1,4 @@
-package sb.app.bo;
+package sb.app.domain;
 
 import java.util.Date;
 

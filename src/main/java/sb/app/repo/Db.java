@@ -19,8 +19,8 @@ package sb.app.repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import sb.app.bo.Book;
-import sb.app.bo.Order;
+import sb.app.domain.Book;
+import sb.app.domain.Order;
 
 @Component
 public class Db {

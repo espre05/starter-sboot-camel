@@ -19,8 +19,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import sb.app.bo.Book;
-import sb.app.bo.Order;
+import sb.app.domain.Book;
+import sb.app.domain.Order;
 import sb.app.services.OrderService;
 
 @RunWith(SpringRunner.class)

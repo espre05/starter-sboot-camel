@@ -10,7 +10,7 @@ import org.apache.camel.spring.boot.CamelContextConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import sb.app.bo.Order;
+import sb.app.domain.Order;
 
 @Configuration
 public class AppCamelConfig implements CamelContextConfiguration {

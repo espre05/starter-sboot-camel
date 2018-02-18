@@ -27,8 +27,8 @@ import io.swagger.annotations.ApiResponses;
 //import io.swagger.annotations.ApiResponse;
 //import io.swagger.annotations.ApiResponses;
 import sb.app.MyappException;
-import sb.app.bo.CalifHouseholdHealthPlan;
-import sb.app.bo.Order;
+import sb.app.domain.CalifHouseholdHealthPlan;
+import sb.app.domain.Order;
 import sb.app.repo.HealthplanRepository;
 import sb.app.repo.OrderRepository;
 import sb.housekeep.Slf4j;
@@ -37,7 +37,7 @@ import sb.housekeep.Slf4j;
 @RequestMapping(value = "/api", headers = { "Accept=application/json,application/xml" }, produces = {
         "application/json" })
 public class OrderController {
-    Logger log = LoggerFactory.getLogger(OrderController.class);
+    Logger log = LoggerFactory.getLogger(OrderController.class);//1 877 678 8465 #035274
 
     @Autowired
     private OrderRepository orderRepo;

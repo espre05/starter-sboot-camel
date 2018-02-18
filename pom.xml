@@ -19,8 +19,8 @@
 		<java.version>1.8</java.version>
 
 		<springboot.version>1.5.8.RELEASE</springboot.version>
-		<keycloak.version>3.1.0.Final</keycloak.version>
 		<camel.version>2.20.0</camel.version>
+		<keycloak.version>3.1.0.Final</keycloak.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +55,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<!-- Excl for WAS9 -->
+			<!-- exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.hibernate.javax.persistence</groupId>
+					<artifactId>hibernate-jpa-2.1-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.transaction</groupId>
+					<artifactId>javax.transaction-api</artifactId>
+				</exclusion>
+			</exclusions-->
 		</dependency>
 		<!--dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
 			</dependency -->

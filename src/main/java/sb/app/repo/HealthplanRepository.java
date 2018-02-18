@@ -18,7 +18,7 @@ package sb.app.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import sb.app.bo.CalifHouseholdHealthPlan;
+import sb.app.domain.CalifHouseholdHealthPlan;
 //@RepositoryRestResource
 public interface HealthplanRepository extends CrudRepository<CalifHouseholdHealthPlan, Integer> {
 }

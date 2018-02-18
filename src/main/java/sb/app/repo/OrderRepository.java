@@ -18,7 +18,7 @@ package sb.app.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import sb.app.bo.Order;
+import sb.app.domain.Order;
 //@RepositoryRestResource
 public interface OrderRepository extends CrudRepository<Order, Integer> {
 }

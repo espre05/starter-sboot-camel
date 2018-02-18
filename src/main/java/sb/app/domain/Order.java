@@ -14,24 +14,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sb.app.bo;
+package sb.app.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.apache.camel.component.jpa.Consumed;
+
+import com.sun.istack.NotNull;
+
 @Entity
-@Table(name = "books")
-public class Book {
+@Table(name = "orders")
+@NamedQuery(name = "query_new_orders", query = "select order from Order order where order.processed = false")
+public class Order {
 
     @Id
     @GeneratedValue
+    @NotNull
     private int id;
 
-    private String item;
+    private int amount;
 
-    private String description;
+    @ManyToOne
+    private Book book;
+
+    private boolean processed;
+
+    //@Consumed
+    public void setProcessed() {
+        processed = true;
+    }
 
     public int getId() {
         return id;
@@ -41,19 +57,27 @@ public class Book {
         this.id = id;
     }
 
-    public String getItem() {
-        return item;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    public String getDescription() {
-        return description;
+    public Book getBook() {
+        return book;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public boolean isProcessed() {
+        return processed;
+    }
+
+    public void setProcessed(boolean processed) {
+        this.processed = processed;
     }
 }

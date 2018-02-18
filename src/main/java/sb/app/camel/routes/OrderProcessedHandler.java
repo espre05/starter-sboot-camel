@@ -6,7 +6,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.component.jpa.DeleteHandler;
 import org.springframework.stereotype.Component;
 
-import sb.app.bo.Order;
+import sb.app.domain.Order;
 
 //@Component -- do not use it c@component, use @bean
 /**
